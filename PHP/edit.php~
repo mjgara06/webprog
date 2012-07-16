@@ -1,0 +1,141 @@
+<?php
+/*
+ * edit.php
+ * 
+ * Copyright 2012 Melvin John E. Gara <mjeg@csserver2>
+ * 
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ * MA 02110-1301, USA.
+ */
+
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>untitled</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="generator" content="Geany 0.21" />
+</head>
+
+<body>
+	
+		<?php
+	
+		
+		$conn = pg_connect("host=localhost dbname=mjeg user=mjeg password=melvz");
+		$command = "select * from usernames where username = '".$_SESSION['user']."' ;";
+		$result = pg_query( $conn, $command );
+		$row = pg_fetch_array($result);
+		$id = $row['id'];
+		require('editfile.php');
+		echo "Username: ".$username."<br/>";
+		echo "Firstname: ".$fname."<br/>";
+		echo "Lastname: ".$lname."<br/>";
+		echo "Email: ".$email."<br/>";
+		echo "Course: ".$course."<br/><br/><hr/>";
+		
+		
+		echo "type the change you want below" ;
+	?>
+	<br/><hr/><br/>
+	<form method="post" action="edit.php">
+		Username: <input type="text" value="<?=$username;?>" name="username"/>
+		<br/>
+		Password: <input type="password" value="<?=$pass;?>" name="pass"/>
+		<br/>
+		Firstname: <input type="text" value="<?=$fname;?>" name="fname"/>
+		<br/>
+		Lastname: <input type="text" value="<?=$lname; ?>" name="lname" />
+		<br/>
+		Email: <input type="text" value="<?=$email; ?>" name="email"/>
+		<br/>
+		Course: <input type="text" value="<?=$course; ?>" name="course"/>
+		<br/>
+		click to submit: <input type="submit" name="submit" value="submit"/>
+	</form>
+	<br/>
+	<hr/>
+	<?php echo $error; ?>
+	<hr/>
+	<br/>
+	<a href="index.php">click to go back</a>
+ <?php
+
+//include("config.php");
+//include("session.php");
+//$error = "";
+?>
+
+<?php
+//if (isset($_GET["action"]) && ($_GET["action"] == "edit")) {
+
+//$username = $_POST['username'];
+//$pass = $_POST['pass'];
+//$email=$_POST['email'];
+//$fname=$_POST['fname'];
+//$lname=$_POST['lname'];
+//$address=$_POST['address'];
+//$course=$_POST['course'];
+
+
+//if (empty($username)) {
+//$error = "Error: pasaway !!"; }
+
+//if (empty($error)) {
+//$query = "INSERT INTO usernames values('$username','$pass','$email','$fname','$lname','$address','$gender','$course')";
+
+
+//pg_query($query) or die('Error, insert query failed');
+//}
+
+//if (empty($error)) { $error = "Update Complete!"; }
+
+//}
+//$query  = "SELECT * FROM usernames WHERE username='$user'";
+//$result = pg_query($query);
+
+//while($row = pg_fetch_assoc($result))
+//{
+//$lname = $row['lname'];
+//$fname = $row['fname'];
+//$pass = $row['pass'];
+//$email=$row['email'];
+//$address=$row['address'];
+//$username = $row['username'];
+//$gender = $row['gender'];
+//$course = $row['course'];;
+//} 
+?>
+
+	<!-- <form  method="post" action="edit.php?action=edit"><br>
+
+			Username: <input type= text size = 15 name = "username" maxlength = 25 value="<?//=@$_GET['username']?>" /><a href="editfile.php">edit</a><br>
+			Firstname: <input type= text size = 15 name = "fname" maxlength = 25 value="<?//=@$_GET['fname']?>" /><a href="edit.php">edit</a><br>
+			Lastname: <input type= text size = 15 name = "lname" maxlength = 25 value="<?//=@$_GET['lname']?>" /><a href="edit.php">edit</a><br>
+			Email_add: <input type= text size = 15 name = "email" maxlength = 25 value="<?//=@$_GET['email']?>" /><a href="edit.php">edit</a><br>
+	
+			Course:<input type="text" name="course" value="<?//=@$_GET['course']?>" /> <a href="edit.php">edit</a><br/>
+			Address:<input type="text" name="address" value="<?//=@$_GET['address']?>" /><a href="edit.php">edit</a><br/>
+			Password: <input type= password size = 15 name = "pass" maxlength = 10><a href="edit.php">edit</a> <br>
+			<input type="submit" name="Submit" value="Submit" /> 
+	</center>
+	
+	</form>
+	</div>-->
+</body>
+
+</html>

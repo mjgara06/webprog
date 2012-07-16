@@ -1,0 +1,38 @@
+<?php
+		session_start();
+		$conn = pg_connect("host=localhost dbname=mjeg user=mjeg password=melvz");
+		$command = "select * from usernames where username = '".$_SESSION['user']."' ;";
+		$result = pg_query( $conn, $command );
+		$row = pg_fetch_array($result);
+		$id = $row['id'];
+		
+		require('editfile.php');
+		//echo "Username: ".$username."<br/>";
+		//echo "Firstname: ".$fname."<br/>";
+		//echo "Lastname: ".$lname."<br/>";
+		//echo "Email: ".$email."<br/>";
+		//echo "Course: ".$course."<br/><br/><hr/>";
+		
+		
+		
+	?>
+	<?echo "EDIT FILEs" ;?>
+	<form method="post" action="edit.php">
+		Username: <input type="text" value="<?=$username;?>" name="username"/><?echo "Username: ".$username."<br/>";?>
+		
+		Password: <input type="password" value="<?=$pass;?>" name="pass"/>
+		<br/>
+		Firstname: <input type="text" value="<?=$fname;?>" name="fname"/><?echo "Firstname: ".$fname."<br/>";?>
+		
+		Lastname: <input type="text" value="<?=$lname; ?>" name="lname" /><?echo "Lastname: ".$lname."<br/>";?>
+		
+		Email: <input type="text" value="<?=$email; ?>" name="email"/><?echo "Email: ".$email."<br/>";?>
+		
+		Course: <input type="text" value="<?=$course; ?>" name="course"/><?echo "Course: ".$course."<br/>";?>
+
+		<input type="submit" name="submit" value="submit"/>
+	</form>
+	<br/>
+	<?php echo $error; ?>
+	<br/>
+	<a href="index.php">go back</a>

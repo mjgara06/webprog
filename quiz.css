@@ -1,0 +1,117 @@
+
+
+
+	div.box
+	{
+		width:1050px;
+		height:550px;
+		margin:15px 150px;
+		background-color:white;
+		outline:2px dashed black;
+		opacity:none;
+	}
+	
+	div.transbox
+	{
+		width:30%;
+		height:450px;
+		margin:0;
+		float:left;
+		background-color:#DCDCDC;
+		border:solid gray;
+		border-top-style:none;
+		border-right-style:solid;
+		border-bottom-style:none;
+		border-left-style:none;
+		opacity:0.6;
+	}
+	
+	div.transbox2
+	{
+		width:69.7%;
+		height:450px;
+		margin:0px 0px;
+		float:right;
+		background-color:white;
+		border:solid gray;
+		border-top-style:none;
+		border-right-style:none;
+		border-bottom-style:none;
+		border-left-style:none;
+	}
+	
+	div.box3
+	{
+		width:95%;
+		height:24px;
+		margin:20px 10px;
+		border-style:solid;
+		border:solid gray;
+		float:center;
+		background:GhostWhite ;
+	}
+	
+	.thegimp
+	{
+		float:left;
+	}
+	
+	.spacer
+	{
+		float:left;
+		width:53.3%;
+		height:18.2%;
+	}
+	
+	.wilberright
+	{
+		float:right;
+	}
+	
+	h4
+	{
+		margin:1px 20px;
+		color:#0000FF;
+		
+	}
+	
+	b
+	{
+		margin:0px 0px;
+		color:black;
+	}
+	
+	h3
+	{
+		margin:1px 20px;
+		color:black;
+		text-decoration:none;
+	}
+	
+	.img
+	{
+		margin-top:2%;
+		margin-left:5%;
+		float:left;
+	}
+	
+	.text
+	{
+		float:left;
+		margin-left:5%;
+		text-decoration:none;
+	}
+	
+	.link
+	{
+		font-size:30px;
+		color:#1E90FF;
+		text-decoration:none;
+	<!--[if IE 7]>.link
+	}
+	
+	a
+	{
+			text-decoration:none;
+	}
+	<![endif]-->

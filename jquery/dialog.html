@@ -1,0 +1,63 @@
+<!--
+   dialog.html
+   
+   Copyright 2012 Melvin John E. Gara <mjeg@csserver2>
+   
+   This program is free software; you can redistribute it and/or modify
+   it under the terms of the GNU General Public License as published by
+   the Free Software Foundation; either version 2 of the License, or
+   (at your option) any later version.
+   
+   This program is distributed in the hope that it will be useful,
+   but WITHOUT ANY WARRANTY; without even the implied warranty of
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU General Public License for more details.
+   
+   You should have received a copy of the GNU General Public License
+   along with this program; if not, write to the Free Software
+   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+   MA 02110-1301, USA.
+-->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+	<title>untitled</title>
+	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+	<meta name="generator" content="Geany 0.21" />
+	<script src="js/jquery-1.7.1.min.js"></script>
+	<script src="js/jquery-ui-1.8.18.custom.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/dark-hive/jquery-ui-1.8.18.custom.css" />
+	
+	<script>
+	$(function() {
+		$( "#dialog" ).dialog();
+	});
+	</script>
+</head>
+
+<body>
+	<div class="demo">
+
+<div id="dialog" title="Basic dialog">
+	<p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+</div>
+
+<!-- Sample page content to illustrate the layering of the dialog -->
+<div class="hiddenInViewSource" style="padding:20px;">
+<p>Sed vel diam id libero <a href="http://example.com">rutrum convallis</a>. Donec aliquet leo vel magna. Phasellus rhoncus faucibus ante. Etiam bibendum, enim faucibus aliquet rhoncus, arcu felis ultricies neque, sit amet auctor elit eros a lectus.</p>
+<form>
+	<input value="text input"><br>
+	<input type="checkbox">checkbox<br>
+	<input type="radio">radio<br>
+	<select>
+		<option>select</option>
+	</select><br><br>
+	<textarea>textarea</textarea><br>
+</form>
+</div>
+</body>
+
+</html>
